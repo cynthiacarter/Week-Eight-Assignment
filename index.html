@@ -50,11 +50,14 @@ function runit() {
 import turtle
 t = turtle.Turtle()
 
-for c in ["red","green","blue","yellow","orange"]:
-    t.color(c)
-    t.forward(100)
-    t.left(144)
-
+sides = int(input("Number of sides 3-24:  "))
+while sides < 3 or sides > 24:
+    sides = int(input("Please pick a number between 3 and 24 (sides = " + sides + "): "))
+for number in range(sides):
+    t.forward(50)
+    t.left(180-(sides-2)*180/sides)
+    
+    
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
